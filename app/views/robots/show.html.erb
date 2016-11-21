@@ -1,0 +1,22 @@
+<h1 class="center"><%= @robot.name %></h1>
+<hr>
+<% div_color = @robot.evil ? 'red' : 'green' %>
+<div class="center container">
+  <div class="<%= div_color %> radius">
+    <i>Serial Number: <%= @robot.serial_number %> </i>
+    <br>
+    <strong>Evil: <%= @robot.evil ? 'Yes, Very!' : 'Nope' %> </strong>
+    <br>
+    <strong>Color: <%= @robot.color %> </strong>
+    <br>
+    <strong>Industry: <%= @robot.industry %> </strong>
+    <br>
+  </div>
+  <br>
+  <div>
+    <%= link_to 'Show Parts', robot_parts_path(@robot), class: 'btn blue' %>
+  </div>
+  <br>
+
+  <%= link_to "#{@inventor.name}'s Robot", inventor_path(@inventor), class: 'btn gray' %>
+</div>
